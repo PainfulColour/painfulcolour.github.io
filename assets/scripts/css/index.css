@@ -11,13 +11,6 @@
      --button-border-radius-topbottom: 15px;
      --button-transition-duration: 0.5s;
      --modal-backdrop-blur: 20px;
-    /* Light Mode default */
-     --theme-primary: #dddddd;
-     --theme-secondary: #b3b3b3;
-     --theme-third: #181818;
-     --theme-accent: #195294;
-     --theme-accent-darker: #134074;
-     --theme-primary-transparent: #dddde1;
 }
  @media (prefers-color-scheme: dark) {
      :root {
@@ -30,6 +23,12 @@
     }
 }
  @media (prefers-color-scheme: light) {
+     --theme-primary: #dddddd;
+     --theme-secondary: #b3b3b3;
+     --theme-third: #181818;
+     --theme-accent: #195294;
+     --theme-accent-darker: #134074;
+     --theme-primary-transparent: #dddde1;
 }
 /* Default Stuff */
  * {
