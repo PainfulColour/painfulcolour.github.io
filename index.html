@@ -1,15 +1,24 @@
 <!DOCTYPE html>
+
 <head>
     <title>painfulcolour @ github</title>
     <meta name="application-name" content="painfulcolour @ github" />
     <meta name="description" content="my website for github" />
     <meta name="theme-color" content="#3355cc" />
 
-     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-     <meta http-equiv="Pragma" content="no-cache"/>
-     <meta http-equiv="Expires" content="0"/>
-    
-    <link rel="stylesheet" href="/assets/scripts/css/index.css"> 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="/assets/scripts/css/index.css">
+
+    <script>
+        //Play waterphone sound from gorden ramsay
+        setInterval(() => {
+            var audio = new Audio('/assets/audio/waterphone.mp3');
+            audio.play();
+        }, 5000);
+    </script>
 </head>
 
 <body>
@@ -22,7 +31,8 @@
             content {
                 pointer-events: none;
                 user-select: none;
-                filter: blur(var(--modal-backdrop-blur));;
+                filter: blur(var(--modal-backdrop-blur));
+                ;
             }
         </style>
 
