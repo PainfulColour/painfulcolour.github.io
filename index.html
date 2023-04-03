@@ -4,6 +4,15 @@
     <meta name="application-name" content="painfullcolour @ github"/>
 <meta name="description" content="my website for github"/>
     <meta name="theme-color" content="#444"/>
+    
+    <script>
+      let params = new URLSearchParams(document.location.search);
+let rick = params.get("r");
+      
+      if (rick) {
+        window.location = "https://shattereddisk.github.io/rickroll/rickroll.mp4";
+      }
+    </script>
  </head>
 
   <body>
