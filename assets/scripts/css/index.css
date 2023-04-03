@@ -1,142 +1,112 @@
- /* Fonts */
-        @font-face {
-            font-family: thefont;
-            src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
-            font-weight: 500;
-        }
-
-        /* Variables and Styles */
-        :root {
-            --button-border-radius-leftright: 55px;
-            --button-border-radius-topbottom: 15px;
-            --button-transition-duration: 0.5s;
-
-            --modal-backdrop-blur: 20px;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme-primary: #181818;
-                --theme-secondary: #2b2b2b;
-                --theme-third: #dddddd;
-                --theme-accent: #0055c5;
-                --theme-accent-darker: #0047a5;
-
-                --theme-primary-transparent: #181818e1;
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --theme-primary: #dddddd;
-                --theme-secondary: #b3b3b3;
-                --theme-third: #181818;
-                --theme-accent: #195294;
-                --theme-accent-darker: #134074;
-                --theme-primary-transparent: #dddde1;
-            }
-        }
-
-        /* Default Stuff */
-
-        * {
-            font-family: thefont;
-        }
-
-        body {
-            margin: 0px;
-            background-color: var(--theme-primary);
-            color: var(--theme-third)
-        }
-
-        /* Text */
-
-        h1,
-        h2,
-        h3 {
-            margin: 0px;
-        }
-
-        /* Content */
-
-        content {
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* Buttons */
-
-        button {
-            padding-left: var(--button-border-radius-leftright);
-            padding-right: var(--button-border-radius-leftright);
-
-            padding-top: var(--button-border-radius-topbottom);
-            padding-bottom: var(--button-border-radius-topbottom);
-
-            color: white;
-            background-color: var(--theme-accent);
-            border: none;
-            border-radius: 50px;
-
-            font-size: 15px;
-
-            transition-property: background-color;
-            transition-duration: var(--button-transition-duration);
-        }
-
-        button:hover {
-            /* Darken on click */
-            background-color: var(--theme-accent-darker);
-        }
-
-        /* Modals */
-
-        modal {
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            position: fixed;
-            display: block;
-            background-color: var(--theme-primary);
-            border-radius: 25px;
-            height: auto;
-            width: auto;
-            padding: 15px;
-            box-shadow: 0px 0px 5px 5px #0c0c0c;
-        }
-
-        modal-container {
-            overflow: hidden;
-            z-index: 999;
-            position: fixed;
-            display: block;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            box-shadow: inset 0px 0px 999999px #000;
-            backdrop-filter: blur(var(--modal-backdrop-blur));
-        }
-
-        topbar {
-            background-color: var(--theme-primary-transparent);
-
-            border-bottom: 1px solid var(--theme-secondary);
-
-            z-index: 500;
-            position: sticky;
-            top: 0px;
-            margin: 0px;
-            padding: 5px;
-
-            display: block;
-
-            backdrop-filter: blur(15px);
-
-            /* Centre Text */
-            line-height: 48px;
-
-            max-height: 48px;
-            width: 100%;
-            height: 48px;
-        }
+ 
+/* Fonts */
+ @font-face {
+     font-family: thefont;
+     src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+     font-weight: 500;
+}
+/* Variables and Styles */
+ :root {
+     --button-border-radius-leftright: 55px;
+     --button-border-radius-topbottom: 15px;
+     --button-transition-duration: 0.5s;
+     --modal-backdrop-blur: 20px;
+    /* Light Mode default */
+     --theme-primary: #dddddd;
+     --theme-secondary: #b3b3b3;
+     --theme-third: #181818;
+     --theme-accent: #195294;
+     --theme-accent-darker: #134074;
+     --theme-primary-transparent: #dddde1;
+}
+ @media (prefers-color-scheme: dark) {
+     :root {
+         --theme-primary: #181818;
+         --theme-secondary: #2b2b2b;
+         --theme-third: #dddddd;
+         --theme-accent: #0055c5;
+         --theme-accent-darker: #0047a5;
+         --theme-primary-transparent: #181818e1;
+    }
+}
+ @media (prefers-color-scheme: light) {
+}
+/* Default Stuff */
+ * {
+     font-family: thefont;
+}
+ body {
+     margin: 0px;
+     background-color: var(--theme-primary);
+     color: var(--theme-third) 
+}
+/* Text */
+ h1, h2, h3 {
+     margin: 0px;
+}
+/* Content */
+ content {
+     display: block;
+     margin-top: 5px;
+}
+/* Buttons */
+ button {
+     padding-left: var(--button-border-radius-leftright);
+     padding-right: var(--button-border-radius-leftright);
+     padding-top: var(--button-border-radius-topbottom);
+     padding-bottom: var(--button-border-radius-topbottom);
+     color: white;
+     background-color: var(--theme-accent);
+     border: none;
+     border-radius: 50px;
+     font-size: 15px;
+     transition-property: background-color;
+     transition-duration: var(--button-transition-duration);
+}
+ button:hover {
+    /* Darken on click */
+     background-color: var(--theme-accent-darker);
+}
+/* Modals */
+ modal {
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 1000;
+     position: fixed;
+     display: block;
+     background-color: var(--theme-primary);
+     border-radius: 25px;
+     height: auto;
+     width: auto;
+     padding: 15px;
+     box-shadow: 0px 0px 5px 5px #0c0c0c;
+}
+ modal-container {
+     overflow: hidden;
+     z-index: 999;
+     position: fixed;
+     display: block;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     box-shadow: inset 0px 0px 999999px #000;
+     backdrop-filter: blur(var(--modal-backdrop-blur));
+}
+ topbar {
+     background-color: var(--theme-primary-transparent);
+     border-bottom: 1px solid var(--theme-secondary);
+     z-index: 500;
+     position: sticky;
+     top: 0px;
+     margin: 0px;
+     padding: 5px;
+     display: block;
+     backdrop-filter: blur(15px);
+    /* Centre Text */
+     line-height: 48px;
+     max-height: 48px;
+     width: 100%;
+     height: 48px;
+}
+ 
