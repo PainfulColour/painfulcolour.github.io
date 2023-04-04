@@ -1,11 +1,9 @@
-let variables = {};
-
 let functions = {};
 
-variables.modal = {};
+functions.general = {};
 functions.modal = {};
 
-functions.waitforjquery = function (method) {
+functions.general.waitforjquery = function (method) {
   if (window.jQuery) {
     method();
   } else {
@@ -15,23 +13,44 @@ functions.waitforjquery = function (method) {
   }
 };
 
+functions.general.randomstring = function (length) {
+  let result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const charactersLength = characters.length;
+  let counter = 0;
+  while (counter < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    counter += 1;
+  }
+  return result;
+};
+
+functions.modal.close = function (modalID) {
+  $(`#${modalID}`).removeClass("vignette");
+  $(`content`).css("filter", "");
+
+  $(`#${modalID} > modal`).fadeOut(400);
+  setTimeout(() => {
+    $(`#${modalID}`).remove();
+  }, 1200);
+};
+
 functions.modal.prompt = function (
   Title,
   Description = "",
   ButtonLayout = "close"
 ) {
-  functions.waitforjquery(function () {
+  functions.general.waitforjquery(function () {
     let buttons = "";
-    let modalID = (((1 + Math.random()) * 0x10000) | 0)
-      .toString(16)
-      .substring(1);
+    let modalID = functions.general.randomstring(12);
     switch (ButtonLayout) {
       case "close":
-        buttons = `<button onclick='document.getElementById("${modalID}").remove()'>Close</button>`;
+        buttons = `<button onclick='functions.modal.close("${modalID}");'>Close</button>`;
         break;
 
       default:
-        buttons = `<button onclick='document.getElementById("${modalID}").remove()'>Close</button>`;
+        buttons = `<button onclick='functions.modal.close("${modalID}");'>Close</button>`;
         break;
     }
 
@@ -46,8 +65,9 @@ functions.modal.prompt = function (
         ${buttons}
         </modal>
         </modal-container>`);
-    setTimeout(function () {
-      $(`#${modalID}`).addClass("vignette");
-    }, 10);
+    $(`#${modalID}`).fadeOut(0);
+    $(`#${modalID}`).fadeIn(400);
+    $(`#${modalID}`).addClass("vignette");
+    $(`content`).css("filter", "blur(var(--modal-backdrop-blur))");
   });
 };
