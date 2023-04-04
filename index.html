@@ -14,6 +14,10 @@
 
     <link rel="stylesheet" href="/assets/scripts/css/index.css">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/assets/scripts/javascript/main.js"></script>
+
     <script>
         //Play waterphone sound from gorden ramsay
         setInterval(() => {
@@ -37,7 +41,7 @@
             }
         </style>
 
-        <modal-container>
+        <modal-container class="vignette">
             <modal>
                 <h1>Enable javascript.</h1>
                 <p>To continue using the website, enable javascript.</p>
@@ -45,7 +49,7 @@
         </modal-container>
     </noscript>
     <content>
-        <button>This is my button.</button>
-        <h1>welcome to my website</h1>
+        <h1>welcome!</h1>
+        <button onclick='functions.modal.prompt("Hello!", "This is a test modal.", "close")'>Button</button>
     </content>
 </body>
