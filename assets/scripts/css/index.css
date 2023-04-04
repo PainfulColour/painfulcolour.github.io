@@ -124,10 +124,11 @@
      border-bottom: 1px solid var(--theme-secondary);
      z-index: 500;
      position: sticky;
+     box-sizing: border-box;
      top: 0px;
      margin: 0px;
-     padding: 5px;
      display: block;
+
      backdrop-filter: blur(15px);
      /* Centre Text */
      line-height: 48px;
